@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmjyvhtu3c751"]
+
+[ext_resource type="Texture2D" uid="uid://et5gqlx85bhm" path="res://Assets/wood_floor.png" id="1_2gbfc"]
+[ext_resource type="PackedScene" uid="uid://ctikhel15qmvn" path="res://gato_pardo.tscn" id="2_7mo5t"]
+
+[node name="salon" type="Node2D"]
+
+[node name="WoodFloor" type="Sprite2D" parent="."]
+position = Vector2(574, 323.5)
+scale = Vector2(1.75692, 1.95455)
+texture = ExtResource("1_2gbfc")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_7mo5t")]
+position = Vector2(137, 144)

@@ -1,0 +1,156 @@
+[gd_scene load_steps=21 format=3 uid="uid://ctikhel15qmvn"]
+
+[ext_resource type="Script" path="res://gato_pardo.gd" id="1_xikcx"]
+[ext_resource type="Texture2D" uid="uid://787jgipcn1me" path="res://Assets/cat_sprites.png" id="2_rovtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6f0n"]
+size = Vector2(131, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdyyl"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4byh8"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txsuo"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac5v3"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56vfg"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ks0"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1kq8"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lrw"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwxo5"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmr26"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ul5"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3xi1"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p87c4"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv6c7"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20g4u"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px2le"]
+atlas = ExtResource("2_rovtr")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yoqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdyyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4byh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txsuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac5v3")
+}],
+"loop": false,
+"name": &"licking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56vfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ks0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1kq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lrw")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwxo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmr26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72ul5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3xi1")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p87c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv6c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20g4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px2le")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="gato" type="CharacterBody2D"]
+script = ExtResource("1_xikcx")
+
+[node name="gato_collision" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 3.5)
+shape = SubResource("RectangleShape2D_c6f0n")
+
+[node name="gato_anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(15, -148)
+scale = Vector2(11.5, 11.5)
+sprite_frames = SubResource("SpriteFrames_5yoqg")
+animation = &"licking"
